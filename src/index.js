@@ -13,7 +13,7 @@
  */
 let computerSequence = []; // track the computer-generated sequence of pad presses
 let playerSequence = []; // track the player-generated sequence of pad presses
-let maxRoundCount = 10; // the max number of rounds, varies with the chosen level
+let maxRoundCount = 8; // the max number of rounds, varies with the chosen level
 let roundCount = 0; // track the number of rounds that have been played so far
 
 /**
@@ -118,7 +118,7 @@ function padHandler(event) {
   let pad = pads.find(pad => pad.color == color);
   pad.sound.play();
   checkPress(color);
-  
+
   return color;
 }
 
@@ -149,6 +149,14 @@ function padHandler(event) {
  */
 function setLevel(level = 1) {
   // TODO: Write your code here.
+  const levels = [1, 2, 3, 4, 5, 6]
+
+  if(!levels.includes(level)){
+    return "Please enter a valid level: 1, 2, 3, 4, 5, 6"
+  }
+  else{
+    return (level - 1) * 6 + 8
+  }
 }
 
 /**
