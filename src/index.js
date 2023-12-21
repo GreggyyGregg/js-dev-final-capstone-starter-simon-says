@@ -152,7 +152,7 @@ function setLevel(level = 1) {
   const levels = [1, 2, 3, 4, 5, 6]
 
   if(!levels.includes(level)){
-    return "Please enter a valid level: 1, 2, 3, 4, 5, 6"
+    return "Please enter a valid level: 1, 2, 3, 4, 5, 6."
   }
   else{
     return (level - 1) * 6 + 8
@@ -175,9 +175,9 @@ function setLevel(level = 1) {
  * getRandomItem([1, 2, 3, 4]) //> returns 1
  */
 function getRandomItem(collection) {
-  // if (collection.length === 0) return null;
-  // const randomIndex = Math.floor(Math.random() * collection.length);
-  // return collection[randomIndex];
+  if (collection.length === 0) return null;
+  const randomIndex = Math.floor(Math.random() * collection.length);
+  return collection[randomIndex];
 }
 
 /**
@@ -185,6 +185,7 @@ function getRandomItem(collection) {
  */
 function setText(element, text) {
   // TODO: Write your code here.
+  element.textContent = text;
   return element;
 }
 
@@ -203,6 +204,12 @@ function setText(element, text) {
 
 function activatePad(color) {
   // TODO: Write your code here.
+  let pad = pads.find(pad => pad.color == color);
+  let current_pad = pad.selector;
+
+  current_pad.classList.add("activated");
+  pad.sound.play();
+  setTimeout(() => current_pad.classList.remove("activated"), 500);
 }
 
 /**
