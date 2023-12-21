@@ -228,6 +228,11 @@ function activatePad(color) {
 
 function activatePads(sequence) {
   // TODO: Write your code here.
+  let i = 1;
+  sequence.forEach(color => {
+    setTimeout((i) => activatePad(color), 600 * i);
+    i++;
+  });
 }
 
 /**
@@ -255,6 +260,12 @@ function activatePads(sequence) {
  */
  function playComputerTurn() {
   // TODO: Write your code here.
+  padContainer.classList.add("unclickable");
+
+  setText(statusSpan, "The computer's turn will now begin...");
+  document.querySelector("js-heading").textContent = `Round ${roundCount} of ${maxRoundCount}`;
+  computerSequence.push(getRandomItem(pads).color);
+  activatePads(computerSequence);
 
   setTimeout(() => playHumanTurn(roundCount), roundCount * 600 + 1000); // 5
 }
