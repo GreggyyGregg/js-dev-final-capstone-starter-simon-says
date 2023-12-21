@@ -82,8 +82,8 @@ startButton.addEventListener("click", startButtonHandler)
  */
 function startButtonHandler() {
   // TODO: Write your code here.
-  maxRoundCount = setLevel();
-  roundCount += 1;
+  setLevel();
+  roundCount ++;
 
   startButton.classList.add("hidden");
   statusSpan.classList.remove("hidden");
@@ -99,7 +99,7 @@ function startButtonHandler() {
  * 1. `const { color } = event.target.dataset;` extracts the value of `data-color`
  * attribute on the element that was clicked and stores it in the `color` variable
  *
- * 2. `if (!color) return;` exits the function if the `color` variable is falsy
+ * 2. `if (!color) return;` exits the function if the `color` variable is false
  *
  * 3. Use the `.find()` method to retrieve the pad from the `pads` array and store it
  * in a variable called `pad`
@@ -115,6 +115,10 @@ function padHandler(event) {
   if (!color) return;
 
   // TODO: Write your code here.
+  let pad = pads.find(pad => pad.color == color);
+  pad.sound.play();
+  checkPress(color);
+  
   return color;
 }
 
