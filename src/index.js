@@ -36,23 +36,23 @@ let roundCount = 0; // track the number of rounds that have been played so far
   {
     color: "purple",
     selector: document.querySelector(".js-pad-purple"),
-    sound: new Audio("./assets/simon-says-sound-1.mp3"),
+    sound: new Audio("./assets/Santana Marg.mp4"),
   },
   // TODO: Add the objects for the orange, green, and blue pads. Use object for the purple pad above as an example.
   {
     color: "orange",
     selector: document.querySelector(".js-pad-orange"),
-    sound: new Audio("./assets/simon-says-sound-2.mp3"),
+    sound: new Audio("./assets/Velma jinkies.mp4"),
   },
   {
     color: "green",
     selector: document.querySelector(".js-pad-green"),
-    sound: new Audio("./assets/simon-says-sound-3.mp3"),
+    sound: new Audio("./assets/MinecraftOof.mp4"),
   },
   {
     color: "blue",
     selector: document.querySelector(".js-pad-blue"),
-    sound: new Audio("./assets/simon-says-sound-4.mp3"),
+    sound: new Audio("./assets/Spongebob Weesnaw.mp4"),
   },
 ];
 
@@ -212,7 +212,7 @@ function activatePad(color) {
 
   current_pad.classList.add("activated");
   pad.sound.play();
-  setTimeout(() => current_pad.classList.remove("activated"), 500);
+  setTimeout(() => current_pad.classList.remove("activated"), 900);
 }
 
 /**
@@ -234,7 +234,7 @@ function activatePads(sequence) {
   let i = 0;
   sequence.forEach((color) => {
     i++;
-    setTimeout((i) => activatePad(color), 600 * i);
+    setTimeout((i) => activatePad(color), 1200 * i);
   });
 }
 
@@ -272,7 +272,7 @@ function activatePads(sequence) {
   computerSequence.push(getRandomItem(pads).color);
   activatePads(computerSequence);
 
-  setTimeout(() => playHumanTurn(roundCount), roundCount * 600 + 1000); // 5
+  setTimeout(() => playHumanTurn(roundCount), roundCount * 1000 + 1000); // 5
 }
 
 /**
