@@ -21,36 +21,36 @@ let roundCount = 0; // track the number of rounds that have been played so far
  * The `pads` array contains an array of pad objects.
  *
  * Each pad object contains the data related to a pad: `color`, `sound`, and `selector`.
- * - The `color` property is set to the color of the pad (e.g., "red", "blue").
+ * - The `color` property is set to the color of the pad (e.g., "purple", "green").
  * - The `selector` property is set to the DOM selector for the pad.
  * - The `sound` property is set to an audio file using the Audio() constructor.
  *
- * Audio file for the green pad: "../assets/simon-says-sound-2.mp3"
- * Audio file for the blue pad: "../assets/simon-says-sound-3.mp3"
- * Audio file for the yellow pad: "../assets/simon-says-sound-4.mp3"
+ * Audio file for the orange pad: "../assets/simon-says-sound-2.mp3"
+ * Audio file for the green pad: "../assets/simon-says-sound-3.mp3"
+ * Audio file for the blue pad: "../assets/simon-says-sound-4.mp3"
  *
  */
 
  const pads = [
   {
-    color: "red",
-    selector: document.querySelector(".js-pad-red"),
+    color: "purple",
+    selector: document.querySelector(".js-pad-purple"),
     sound: new Audio("../assets/simon-says-sound-1.mp3"),
   },
-  // TODO: Add the objects for the green, blue, and yellow pads. Use object for the red pad above as an example.
+  // TODO: Add the objects for the orange, green, and blue pads. Use object for the purple pad above as an example.
   {
-    color: "cyan",
-    selector: document.querySelector(".js-pad-green"),
+    color: "orange",
+    selector: document.querySelector(".js-pad-orange"),
     sound: new Audio("../assets/simon-says-sound-2.mp3"),
+  },
+  {
+    color: "green",
+    selector: document.querySelector(".js-pad-green"),
+    sound: new Audio("../assets/simon-says-sound-3.mp3"),
   },
   {
     color: "blue",
     selector: document.querySelector(".js-pad-blue"),
-    sound: new Audio("../assets/simon-says-sound-3.mp3"),
-  },
-  {
-    color: "yellow",
-    selector: document.querySelector(".js-pad-yellow"),
     sound: new Audio("../assets/simon-says-sound-4.mp3"),
   },
 ];
@@ -89,7 +89,7 @@ function startButtonHandler() {
   statusSpan.classList.remove("hidden");
 
   playComputerTurn();
-  
+
   return { startButton, statusSpan };
 }
 

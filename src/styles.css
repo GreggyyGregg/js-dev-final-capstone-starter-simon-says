@@ -66,70 +66,70 @@ h1 {
   margin: 20px;
 }
 
-.pad-red {
+.pad-purple {
   border-top-left-radius: 200px;
-  background-color: red;
+  background-color: rgb(200, 0, 255);
 }
 
-.pad-red:hover,
-.pad-red:focus {
+.pad-purple:hover,
+.pad-purple:focus {
   background-color: #ff451a;
   transform: rotate(-5deg);
 }
 
-.pad-red:active,
-.pad-red.activated {
+.pad-purple:active,
+.pad-purple.activated {
   background-color: #ff5c36;
   transform: translateY(10px);
 }
 
-.pad-green {
+.pad-orange {
   border-top-right-radius: 200px;
-  background-color: rgb(0,191,255);
+  background-color: rgb(255, 95, 31);
 }
 
-.pad-green:hover,
-.pad-green:focus {
+.pad-orange:hover,
+.pad-orange:focus {
   background-color: #8cc218;
   transform: rotate(5deg);
 }
 
-.pad-green:active,
-.pad-green.activated {
+.pad-orange:active,
+.pad-orange.activated {
   background-color: #a0ea00;
   transform: translateY(10px);
 }
 
-.pad-yellow {
-  border-bottom-right-radius: 200px;
-  background-color: yellow;
-}
-
-.pad-yellow:hover,
-.pad-yellow:focus {
-  background-color: #ffb900;
-  transform: rotate(5deg);
-}
-
-.pad-yellow:active,
-.pad-yellow.activated {
-  background-color: #ffca3d;
-  transform: translateY(10px);
-}
-
 .pad-blue {
-  border-bottom-left-radius: 200px;
-  background-color: blue;
+  border-bottom-right-radius: 200px;
+  background-color: rgb(0, 0, 255);
 }
 
 .pad-blue:hover,
 .pad-blue:focus {
-  background-color: #139ddd;
+  background-color: #ffb900;
   transform: rotate(5deg);
 }
 
 .pad-blue:active,
 .pad-blue.activated {
+  background-color: #ffca3d;
+  transform: translateY(10px);
+}
+
+.pad-green {
+  border-bottom-left-radius: 200px;
+  background-color: rgb(0, 255, 51);
+}
+
+.pad-green:hover,
+.pad-green:focus {
+  background-color: #139ddd;
+  transform: rotate(5deg);
+}
+
+.pad-green:active,
+.pad-green.activated {
   background-color: #2bbcff;
   transform: translateY(10px);
 }
