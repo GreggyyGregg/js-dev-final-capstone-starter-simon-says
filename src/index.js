@@ -8,7 +8,7 @@
  const heading = document.querySelector('.js-heading');; // Use querySelector() to get the heading element
  const padContainer = document.querySelector('.js-pad-container');; // Use querySelector() to get the heading element
 
- const setLevelButton = document.querySelector(".js-level-button");
+//  const levelButton = document.querySelector(".js-level-button");
 /**
  * VARIABLES
  */
@@ -62,7 +62,8 @@ let roundCount = 0; // track the number of rounds that have been played so far
 
 padContainer.addEventListener("click", padHandler);
 // TODO: Add an event listener `startButtonHandler()` to startButton.
-startButton.addEventListener("click", startButtonHandler)
+startButton.addEventListener("click", startButtonHandler);
+// levelButton.addEventListener("click", levelButtonHandler);
 /**
  * EVENT HANDLERS
  */
@@ -87,14 +88,18 @@ function startButtonHandler() {
   roundCount ++;
 
   startButton.classList.add("hidden");
-  setLevelButton.classList.add("hidden");
-  console.log("made it")
+  // levelButton.classList.add("hidden");
   statusSpan.classList.remove("hidden");
 
   playComputerTurn();
 
   return { startButton, statusSpan };
 }
+
+// function levelButtonHandler(level){
+//   setLevel(level);
+  
+// }
 
 /**
  * Called when one of the pads is clicked.
@@ -150,7 +155,7 @@ function padHandler(event) {
  * setLevel(8) //> returns "Please enter level 1, 2, 3, or 4";
  *
  */
-function setLevel(level = 1) {
+function setLevel(level) {
   // TODO: Write your code here.
   const levels = [1, 2, 3, 4, 5, 6]
 
@@ -158,7 +163,7 @@ function setLevel(level = 1) {
     return "Please enter a valid level: 1, 2, 3, 4, 5, 6."
   }
   else{
-    return (level - 1) * 6 + 8
+    return maxRoundCount = (level - 1) * 6 + 8
   }
 }
 
@@ -375,10 +380,24 @@ function resetGame(text) {
   alert(text);
   setText(heading, "Saucy Simon Says");
   startButton.classList.remove("hidden");
-  setLevelButton.classList.remove("hidden");
+  // levelButton.classList.remove("hidden");
   statusSpan.classList.add("hidden");
   padContainer.classList.add("unclickable");
 }
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+// window.onclick = function(e) {
+//   if (!e.target.matches('.dropbtn')) {
+//   var myDropdown = document.getElementById("myDropdown");
+//     if (myDropdown.classList.contains('show')) {
+//       myDropdown.classList.remove('show');
+//     }
+//   }
+// }
 
 /**
  * Please do not modify the code below.
