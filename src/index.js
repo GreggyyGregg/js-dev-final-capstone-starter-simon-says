@@ -8,7 +8,6 @@
  const heading = document.querySelector('.js-heading');; // Use querySelector() to get the heading element
  const padContainer = document.querySelector('.js-pad-container');; // Use querySelector() to get the heading element
 
-//  const levelButton = document.querySelector(".js-level-button");
 /**
  * VARIABLES
  */
@@ -63,7 +62,7 @@ let roundCount = 0; // track the number of rounds that have been played so far
 padContainer.addEventListener("click", padHandler);
 // TODO: Add an event listener `startButtonHandler()` to startButton.
 startButton.addEventListener("click", startButtonHandler);
-// levelButton.addEventListener("click", levelButtonHandler);
+
 /**
  * EVENT HANDLERS
  */
@@ -94,11 +93,6 @@ function startButtonHandler() {
 
   return { startButton, statusSpan };
 }
-
-// function levelButtonHandler(level){
-//   setLevel(level);
-  
-// }
 
 /**
  * Called when one of the pads is clicked.
@@ -379,7 +373,6 @@ function resetGame(text) {
   alert(text);
   setText(heading, "Saucy Simon Says");
   startButton.classList.remove("hidden");
-  // levelButton.classList.remove("hidden");
   statusSpan.classList.add("hidden");
   padContainer.classList.add("unclickable");
 }
@@ -387,16 +380,6 @@ function resetGame(text) {
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
-
-// Close the dropdown if the user clicks outside of it
-// window.onclick = function(e) {
-//   if (!e.target.matches('.dropbtn')) {
-//   var myDropdown = document.getElementById("myDropdown");
-//     if (myDropdown.classList.contains('show')) {
-//       myDropdown.classList.remove('show');
-//     }
-//   }
-// }
 
 /**
  * Please do not modify the code below.
