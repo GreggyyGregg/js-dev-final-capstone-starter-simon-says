@@ -88,7 +88,6 @@ function startButtonHandler() {
   roundCount ++;
 
   startButton.classList.add("hidden");
-  
   statusSpan.classList.remove("hidden");
 
   playComputerTurn();
